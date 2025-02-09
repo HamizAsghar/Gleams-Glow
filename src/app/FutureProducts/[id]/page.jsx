@@ -106,8 +106,7 @@ export default function ProductPage() {
                                         onChange={(e) => setSelectedSize(e.target.value)}
                                         className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     >
-                                        <option value="15ml">15ml</option>
-                                        <option value="30ml">30ml + 15ml FREE</option>
+                                        <option value="30ml">30ml</option>
                                     </select>
                                 </div>
 
