@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Twitter, Linkedin, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Instagram, Facebook, ArrowRight } from "lucide-react";
 
 export default function Footer() {
     const [email, setEmail] = useState("");
@@ -19,30 +19,18 @@ export default function Footer() {
     const footerLinks = {
         products: [
             { label: "Serums", href: "/products/serums" },
-            { label: "Moisturizers", href: "/products/moisturizers" },
-            { label: "Cleansers", href: "/products/cleansers" },
-            { label: "Treatments", href: "/products/treatments" },
-            { label: "Gift Sets", href: "/products/gift-sets" },
         ],
         company: [
-            { label: "About Us", href: "/about" },
-            { label: "Careers", href: "/careers" },
-            { label: "Store Locator", href: "/stores" },
-            { label: "Our Story", href: "/story" },
+            { label: "About Us", href: "/About" },
         ],
         support: [
-            { label: "Contact Us", href: "/contact" },
-            { label: "FAQs", href: "/faqs" },
-            { label: "Shipping", href: "/shipping" },
-            { label: "Returns", href: "/returns" },
+            { label: "Contact Us", href: "/contactus" },
         ],
     };
 
     const socialLinks = [
-        { icon: Instagram, href: "#", label: "Instagram" },
-        { icon: Facebook, href: "#", label: "Facebook" },
-        { icon: Twitter, href: "#", label: "Twitter" },
-        { icon: Linkedin, href: "#", label: "LinkedIn" },
+        { icon: Instagram, href: "https://www.instagram.com/gleamandglowsofficial/?igsh=MWNwdjh6N2o5Ymo3eg%3D%3D#", label: "Instagram" },
+        { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61565202278086&rdid=DIKyH8OiWKJzp7BV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15oxtXNFCU%2F#", label: "Facebook" },
     ];
 
     return (

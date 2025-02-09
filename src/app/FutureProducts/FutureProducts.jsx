@@ -50,7 +50,7 @@ export default function FutureProduct() {
                                 }`}
                         >
                             <Link
-                                href={`/future-products/${product.id}`} // Link to product details page
+                                href={`/FutureProducts/${product.id}`} // Link to product details page
                                 className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold text-lg hover:bg-black hover:text-white transition-all duration-300"
                             >
                                 Shop Now <FaArrowRight />

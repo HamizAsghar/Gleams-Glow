@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, Linkedin, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -33,9 +33,9 @@ export default function ContactPage() {
         {
             icon: Phone,
             title: "Call Us",
-            details: ["+92 3229771040"],
+            details: ["+92 3059111184"],
             color: "bg-blue-50",
-            action: "tel:+923229771040", // Trigger phone call
+            action: "tel:+923059111184", // Trigger phone call
         },
         {
             icon: Mail,

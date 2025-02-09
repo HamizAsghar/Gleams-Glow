@@ -9,9 +9,8 @@ import { Menu, X, ShoppingCart, User, Search, Sun, Moon } from "lucide-react"
 const menuItems = [
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
-    { href: "/categories", label: "Categories" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" }
+    { href: "/About", label: "About" },
+    { href: "/contactus", label: "Contact" }
 ]
 
 export default function Navbar() {
