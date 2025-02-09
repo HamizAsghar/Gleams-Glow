@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 const product = {
     id: 1,
     name: "Radiant Glow Serum",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=500&q=80",
+    image: "/images/hero/P_2.JPG",
     description: "A premium serum for glowing skin.",
 };
 

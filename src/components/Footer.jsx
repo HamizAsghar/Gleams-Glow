@@ -18,7 +18,7 @@ export default function Footer() {
 
     const footerLinks = {
         products: [
-            { label: "Serums", href: "/products/serums" },
+            { label: "Serums", href: "/FutureProducts/1" },
         ],
         company: [
             { label: "About Us", href: "/About" },

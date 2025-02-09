@@ -8,7 +8,7 @@ import { Menu, X, ShoppingCart, User, Search, Sun, Moon } from "lucide-react"
 
 const menuItems = [
     { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
+    { href: "/FutureProducts/1", label: "Products" },
     { href: "/About", label: "About" },
     { href: "/contactus", label: "Contact" }
 ]
@@ -77,15 +77,15 @@ export default function Navbar() {
                             )}
                         </button>
                     )}
-                    <Link href="/search" className="p-2 rounded-full hover:bg-muted transition-colors">
+                    {/* <Link href="/search" className="p-2 rounded-full hover:bg-muted transition-colors">
                         <Search className="h-5 w-5 text-primary" />
-                    </Link>
+                    </Link> */}
                     <Link href="/cart" className="p-2 rounded-full hover:bg-muted transition-colors">
                         <ShoppingCart className="h-5 w-5 text-primary" />
                     </Link>
-                    <Link href="/account" className="p-2 rounded-full hover:bg-muted transition-colors">
+                    {/* <Link href="/account" className="p-2 rounded-full hover:bg-muted transition-colors">
                         <User className="h-5 w-5 text-primary" />
-                    </Link>
+                    </Link> */}
                 </div>
 
                 {/* Mobile Menu Button */}
