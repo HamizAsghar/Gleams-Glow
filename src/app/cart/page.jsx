@@ -2,6 +2,7 @@
 
 // import { useState } from "react"
 // import { useRouter } from "next/navigation"
+// import Swal from "sweetalert2"
 
 // export default function CartPage() {
 //     const router = useRouter()
@@ -11,11 +12,8 @@
 //         phone: "",
 //         address: "",
 //         city: "",
-//         postalCode: "",
 //     })
 
-//     // This would normally come from a cart context/state management
-//     // For demo, we'll use localStorage
 //     const [cartItems, setCartItems] = useState(() => {
 //         if (typeof window !== "undefined") {
 //             return JSON.parse(localStorage.getItem("cart") || "[]")
@@ -27,6 +25,16 @@
 
 //     const handleSubmit = async (e) => {
 //         e.preventDefault()
+
+//         // Show loading state
+//         Swal.fire({
+//             title: "Processing Order",
+//             html: "Please wait...",
+//             allowOutsideClick: false,
+//             didOpen: () => {
+//                 Swal.showLoading()
+//             },
+//         })
 
 //         try {
 //             const response = await fetch("/api/send-order", {
@@ -44,14 +52,29 @@
 //             })
 
 //             if (response.ok) {
-//                 alert("Order placed successfully! Check your email for confirmation.")
+//                 // Clear cart
 //                 localStorage.removeItem("cart")
+
+//                 // Show success message
+//                 await Swal.fire({
+//                     icon: "success",
+//                     title: "Order Placed Successfully!",
+//                     text: "Thank you for your order. We will process it soon!",
+//                     confirmButtonColor: "#3B82F6",
+//                 })
+
+//                 // Redirect to thank you page
 //                 router.push("/thank-you")
 //             } else {
 //                 throw new Error("Failed to place order")
 //             }
 //         } catch (error) {
-//             alert("Error placing order. Please try again.")
+//             Swal.fire({
+//                 icon: "error",
+//                 title: "Oops...",
+//                 text: "Something went wrong! Please try again.",
+//                 confirmButtonColor: "#3B82F6",
+//             })
 //         }
 //     }
 
@@ -182,6 +205,8 @@
 
 
 
+
+
 "use client"
 
 import { useState } from "react"
@@ -196,7 +221,6 @@ export default function CartPage() {
         phone: "",
         address: "",
         city: "",
-        postalCode: "",
     })
 
     const [cartItems, setCartItems] = useState(() => {
@@ -211,7 +235,16 @@ export default function CartPage() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        // Show loading state
+        if (!formData.name || !formData.phone || !formData.city || !formData.address) {
+            Swal.fire({
+                icon: "error",
+                title: "Required Fields Missing",
+                text: "Please fill in all required fields before placing your order.",
+                confirmButtonColor: "#DC2626",
+            })
+            return
+        }
+
         Swal.fire({
             title: "Processing Order",
             html: "Please wait...",
@@ -237,10 +270,8 @@ export default function CartPage() {
             })
 
             if (response.ok) {
-                // Clear cart
                 localStorage.removeItem("cart")
 
-                // Show success message
                 await Swal.fire({
                     icon: "success",
                     title: "Order Placed Successfully!",
@@ -248,7 +279,6 @@ export default function CartPage() {
                     confirmButtonColor: "#3B82F6",
                 })
 
-                // Redirect to thank you page
                 router.push("/thank-you")
             } else {
                 throw new Error("Failed to place order")
@@ -321,7 +351,9 @@ export default function CartPage() {
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div>
-                                <label className="block text-sm font-medium mb-1">Full Name</label>
+                                <label className="block text-sm font-medium mb-1">
+                                    Full Name <span className="text-red-500">*</span>
+                                </label>
                                 <input
                                     type="text"
                                     required
@@ -334,14 +366,15 @@ export default function CartPage() {
                                 <label className="block text-sm font-medium mb-1">Email</label>
                                 <input
                                     type="email"
-                                    required
                                     className="w-full rounded-md border p-2"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-1">Phone</label>
+                                <label className="block text-sm font-medium mb-1">
+                                    Phone <span className="text-red-500">*</span>
+                                </label>
                                 <input
                                     type="tel"
                                     required
@@ -351,19 +384,23 @@ export default function CartPage() {
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-1">Postal Code</label>
+                                <label className="block text-sm font-medium mb-1">
+                                    City <span className="text-red-500">*</span>
+                                </label>
                                 <input
                                     type="text"
                                     required
                                     className="w-full rounded-md border p-2"
-                                    value={formData.postalCode}
-                                    onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
+                                    value={formData.city}
+                                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                                 />
                             </div>
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium mb-1">Address</label>
+                            <label className="block text-sm font-medium mb-1">
+                                Address <span className="text-red-500">*</span>
+                            </label>
                             <textarea
                                 required
                                 rows={3}
@@ -385,4 +422,3 @@ export default function CartPage() {
         </div>
     )
 }
-
