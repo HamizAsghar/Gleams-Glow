@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "var(--background)",  // Using custom background color from CSS variables
+        foreground: "var(--foreground)",  // Using custom foreground color from CSS variables
       },
     },
   },
