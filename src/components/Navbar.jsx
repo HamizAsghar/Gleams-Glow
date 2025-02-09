@@ -43,9 +43,14 @@ export default function Navbar() {
             }}
         >
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <Link href="/" className="text-2xl font-bold" style={{ color: "var(--foreground)", display: "flex", alignItems: "center" }}>
-                    <span style={{ fontSize: "2.5rem", fontWeight: "700", color: "#F0A500" }}>G</span>leam & <span style={{ fontSize: "2.5rem", fontWeight: "700", color: "#F0A500"}}>G</span>low
+                <Link href="/" className="text-2xl font-bold" style={{ display: "flex", alignItems: "center" }}>
+                    <img
+                        src="/images/logo.png"
+                        alt="Gleam & Glow Logo"
+                        style={{ height: "70px", width: "70px" }} // Adjust the size as per your need
+                    />
                 </Link>
+
 
 
                 {/* Desktop Menu */}
