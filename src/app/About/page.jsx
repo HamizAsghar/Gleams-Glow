@@ -85,7 +85,7 @@ export default function AboutPage() {
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
                         backgroundImage:
-                            "url('https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=2000&q=80')",
+                            "url('/images/hero/4rth.jpg')",
                     }}
                 >
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
@@ -105,7 +105,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-lg md:text-xl text-white/90"
                     >
-                        Founded in 2020, Gleam & Glow was born from a passion for creating natural, effective skincare solutions
+                        Founded in 2024, Gleam & Glows was born from a passion for creating natural, effective skincare solutions
                         that enhance your natural beauty. Our journey began in a small laboratory and has grown into a beloved brand
                         trusted by thousands.
                     </motion.p>
@@ -134,7 +134,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Testimonials Section */}
+            {/* Testimonials Section
             <section className="py-20 px-4 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-16">Customer Love</h2>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 }

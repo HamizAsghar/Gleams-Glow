@@ -60,7 +60,7 @@ export default function ContactPage() {
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
                         backgroundImage:
-                            "url('https://images.unsplash.com/photo-1556159992-e189f8e50104?auto=format&fit=crop&w=2000&q=80')",
+                            "url('/images/hero/P_1.JPG')",
                     }}
                 >
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
@@ -116,10 +116,10 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Contact Form & Map Section */}
+            
             <section className="py-20 px-4 bg-white">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="max-w-7xl mx-auto ">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
                         {/* Contact Form */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -199,22 +199,6 @@ export default function ContactPage() {
                             </form>
                         </motion.div>
 
-                        {/* Map */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="h-[600px] rounded-xl overflow-hidden shadow-xl"
-                        >
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596698663!2d-74.25987368715491!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645564658846!5m2!1sen!2s"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen
-                                loading="lazy"
-                            />
-                        </motion.div>
                     </div>
                 </div>
             </section>

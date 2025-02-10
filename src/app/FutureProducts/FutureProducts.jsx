@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const product = {
     id: 1,
-    name: "Radiant Glow Serum",
+    name: "Gleam and Glows whitening serum",
     image: "/images/hero/P_2.JPG",
     description: "A premium serum for glowing skin.",
 };

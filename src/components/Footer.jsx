@@ -43,7 +43,7 @@ export default function Footer() {
                         <Link href="/" className="inline-block mb-6">
                             <div className="flex items-center">
                                 <span className="text-3xl font-bold">
-                                    <span className="text-amber-500">G</span>leam &<span className="text-amber-500">G</span>low
+                                    <span className="text-amber-500">G</span>leam &<span className="text-amber-500">G</span>lows
                                 </span>
                             </div>
                         </Link>
